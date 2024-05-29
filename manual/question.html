@@ -260,7 +260,7 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
 </section>
 <section id="id10">
 <h2>11、部分域名无法查询到信息<a class="headerlink" href="#id10" title="此标题的永久链接"></a></h2>
-<p>已知不支持的域名后缀：<code class="docutils literal notranslate"><span class="pre">.lc</span></code>、<code class="docutils literal notranslate"><span class="pre">.ml</span></code>、<code class="docutils literal notranslate"><span class="pre">.ai</span></code>、<code class="docutils literal notranslate"><span class="pre">.my</span></code>、<code class="docutils literal notranslate"><span class="pre">.ch</span></code>、<code class="docutils literal notranslate"><span class="pre">.edu.cn</span></code></p>
+<p>已知不支持的域名后缀：<code class="docutils literal notranslate"><span class="pre">.lc</span></code>、<code class="docutils literal notranslate"><span class="pre">.ml</span></code>、<code class="docutils literal notranslate"><span class="pre">.ai</span></code>、<code class="docutils literal notranslate"><span class="pre">.my</span></code>、<code class="docutils literal notranslate"><span class="pre">.ch</span></code>、<code class="docutils literal notranslate"><span class="pre">.edu.cn</span></code>、<code class="docutils literal notranslate"><span class="pre">.name</span></code></p>
 </section>
 <section id="ingress">
 <h2>12、获取ingress的域名<a class="headerlink" href="#ingress" title="此标题的永久链接"></a></h2>
@@ -386,6 +386,12 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
 </pre></div>
 </div>
 <p>可以重置为：123456</p>
+<p>示例</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">#</span><span class="w"> </span><span class="n">sqlite3</span>
+<span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ATTACH</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="s1">&#39;/opt/domain-admin/database/database.db&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mydatabase</span><span class="p">;</span>
+<span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tb_user</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;$2b$12$c/tJvOYaWxzis4CXSyGN9ua4B7wzor8j9WrGsgV/2pdJnsrAMJxiK&quot;</span><span class="w"> </span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 <section id="database-is-locked">
 <h2>18、database is locked<a class="headerlink" href="#database-is-locked" title="此标题的永久链接"></a></h2>
